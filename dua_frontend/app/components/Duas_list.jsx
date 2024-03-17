@@ -14,7 +14,7 @@ function Duas_list() {
       try {
         setIsLoading(true);
         const response = await axios.get(
-          `http://localhost:3500/CategoryDuas/${categoryNo}`
+          `https://single-dua-backend.onrender.com/CategoryDuas/${categoryNo}`
         );
         setDuasData(response.data);
         setIsLoading(false);
@@ -28,7 +28,9 @@ function Duas_list() {
   if (isLoading)
     return (
       <div className="w-full h-[36rem] ms-5 me-36 mt-2 rounded-t-xl rounded-b-md overflow-y-auto overflow-x-hidden flex justify-center items-center">
-        <div className="text-[4rem] font-bold text-green-800">Loading...</div>
+        <div className="text-[4rem] font-bold text-green-800 select-none">
+          Loading...
+        </div>
       </div>
     );
 

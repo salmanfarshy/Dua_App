@@ -13,7 +13,9 @@ function Catagory_list() {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const response = await axios.get("http://localhost:3500/catagorys");
+        const response = await axios.get(
+          "https://single-dua-backend.onrender.com/catagorys"
+        );
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -60,7 +62,9 @@ function Catagory_list() {
           </label>
         </div>
         <div className="mt-32 overflow-y-auto overflow-x-hidden flex justify-center">
-          <div className="text-3xl font-bold text-green-800">Loading...</div>
+          <div className="text-3xl font-bold text-green-800 select-none">
+            Loading...
+          </div>
         </div>
       </div>
     );
